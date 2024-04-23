@@ -10,7 +10,7 @@ module.exports = async (client) => {
     try {
         const [localCommands, applicationCommands] = await Promise.all([
             getLocalCommands(),
-            getApplicationCommands(client, testServerId),
+            getApplicationCommands(client) //, testServerId),
         ]);
 
         for (const localCommand of localCommands) {
