@@ -47,8 +47,8 @@ module.exports = {
     const embed = new EmbedBuilder()
       .setTitle("8Ball")
       .addFields(
-        { name: "Question: ", value: `${answer}`, inline: false },
-        { name: "Answer: ", value: `${response}`, inline: false }
+        { name: "Question: ", value: `${answer}` },
+        { name: "Answer: ", value: `${response}` }
       )
       .setColor(0xfffffe)
       .setFooter({
