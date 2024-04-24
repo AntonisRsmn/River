@@ -3,11 +3,7 @@ const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require("disc
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("gaymeter")
-    .setDescription("Gay Meter.")
-
-    .toJSON(),
-  userPermissions: [PermissionFlagsBits.ManageMessages],
-  botPermissions: [PermissionFlagsBits.Connect],
+    .setDescription("Gay Meter."),
 
   run: (client, interaction) => {
     var gaymeter = [

@@ -3,11 +3,7 @@ const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require("disc
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("compliments")
-    .setDescription("Gives you nice compliments.")
-
-    .toJSON(),
-  userPermissions: [PermissionFlagsBits.ManageMessages],
-  botPermissions: [PermissionFlagsBits.Connect],
+    .setDescription("Gives you nice compliments."),
 
   run: (client, interaction) => {
     var compliments = [

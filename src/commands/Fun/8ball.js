@@ -9,11 +9,7 @@ module.exports = {
         .setName("question")
         .setDescription("Question to answer.")
         .setRequired(true)
-    )
-
-    .toJSON(),
-  userPermissions: [PermissionFlagsBits.ManageMessages],
-  botPermissions: [PermissionFlagsBits.Connect],
+    ),
 
   run: (client, interaction) => {
     const { options } = interaction;

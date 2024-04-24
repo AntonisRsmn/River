@@ -3,11 +3,7 @@ const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require("disc
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("ppmeter")
-    .setDescription("PP Meter.")
-
-    .toJSON(),
-  userPermissions: [PermissionFlagsBits.ManageMessages],
-  botPermissions: [PermissionFlagsBits.Connect],
+    .setDescription("PP Meter."),
 
   run: (client, interaction) => {
     var ppmeter = [
