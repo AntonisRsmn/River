@@ -41,7 +41,7 @@ module.exports = {
       .setTitle("Kicked Succesfully")
       .addFields(
         { name: "Member: ", value: `${user}`},
-        { name: "Member ID: ", value: `${user.id}` },
+        { name: "Member's ID: ", value: `${user.id}` },
         { name: "Reason: ", value: `${reason}` },
       )
       .setColor("#FFFFFE")
