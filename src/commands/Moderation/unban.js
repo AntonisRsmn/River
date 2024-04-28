@@ -16,7 +16,7 @@ module.exports = {
   botPermissions: [PermissionFlagsBits.BanMembers],
 
   run: async (client, interaction) => {
-    const { channel, options } = interaction;
+    const { options } = interaction;
 
     const userId = options.getString("userid");
 

@@ -20,7 +20,7 @@ module.exports = {
   botPermissions: [PermissionFlagsBits.KickMembers],
 
   run: async (client, interaction) => {
-    const { channel, options } = interaction;
+    const { options } = interaction;
 
     const user = options.getUser("target");
     const reason = options.getString("reason") || "No reason provided";

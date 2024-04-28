@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -10,12 +10,11 @@ module.exports = {
         .setRequired(false)
         ),
 
-  run: async(client, interaction) => {
+  run: async (client, interaction) => {
       const { options } = interaction;
       const user = options.getUser("user") || interaction.user;
       const member = await interaction.guild.members.cache.get(user.id);
       const icon = member.displayAvatarURL();
-      const tag = user.tag;
       const nick = member.nickname || "None";
       
       const embed = new EmbedBuilder()

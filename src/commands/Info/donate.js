@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -10,7 +10,7 @@ module.exports = {
         .setTitle(`***Donate***`)
         .setColor("#fffffe")
         .setTimestamp()
-        .setDescription("Consider [Donating](https://www.paypal.me/RusmanAntonios) to help me make River better for everyone Thanks.")
+        .setDescription("Consider [Donating](https://www.paypal.me/RusmanAntonis) to help me make River better for everyone Thanks.")
         .setFooter({
             text: `By ${interaction.user.username}`,
             iconURL: interaction.user.displayAvatarURL(),
