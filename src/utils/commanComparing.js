@@ -38,7 +38,7 @@ module.exports = (existing, local) => {
                 type: input.type,
                 name: input.name,
                 description: input.description,
-                options: input.options ? normaliseObject(input.options) : undefined,
+                options: input.options ? normalizeObject(input.options) : undefined,
                 required: input.required
             }
 
@@ -48,7 +48,7 @@ module.exports = (existing, local) => {
         return (cmd.options || []).map((option) => {
             let cleanedOption = JSON.parse(JSON.stringify(option));
             cleanedOption.options
-            ? (cleanedOption.options = normaliseObject(cleanedOption.options))
+            ? (cleanedOption.options = normalizeObject(cleanedOption.options))
             : (cleanOptions = normalizeObject(cleanedOption));
             cleanObject(cleanedOption);
             return {
