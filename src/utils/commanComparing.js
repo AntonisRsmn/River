@@ -29,9 +29,9 @@ module.exports = (existing, local) => {
             }
         };
 
-        const normalizeObject = (input) => {
+        const normaliseObject = (input) => {
             if (Array.isArray(input)) {
-                return input.map((item) => normalizeObject(item));
+                return input.map((item) => normaliseObject(item));
             }
 
             const normalizedItem = {
@@ -49,7 +49,7 @@ module.exports = (existing, local) => {
             let cleanedOption = JSON.parse(JSON.stringify(option));
             cleanedOption.options
             ? (cleanedOption.options = normaliseObject(cleanedOption.options))
-            : (cleanOptions = normalizeObject(cleanedOption));
+            : (cleanedOption = normaliseObject(cleanedOption));
             cleanObject(cleanedOption);
             return {
                 ...cleanedOption,
