@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const { Client, SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require("discord.js");
+=======
+const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require("discord.js");
+>>>>>>> 681dba4d3042040a22577064ac039d00214cc7f0
 const ms = require("ms");
 
 module.exports = {
@@ -19,7 +23,15 @@ module.exports = {
   .addStringOption(option => 
       option.setName("reason")
           .setDescription("Reason for the mute.")
+<<<<<<< HEAD
   ),
+=======
+  )
+
+    .toJSON(),
+  userPermissions: [PermissionFlagsBits.ModerateMembers],
+  botPermissions: [PermissionFlagsBits.BanMembers],
+>>>>>>> 681dba4d3042040a22577064ac039d00214cc7f0
 
   run: async (client, interaction) => {
     const { guild, options } = interaction;
@@ -50,6 +62,12 @@ module.exports = {
         if (!convertedTime)
             return interaction.reply({ embeds: [errEmbed], ephemeral: true});
 
+<<<<<<< HEAD
+=======
+        if (convertedTime >= "27d")
+            return interaction.reply({ embeds: [errEmbed], ephemeral: true});
+
+>>>>>>> 681dba4d3042040a22577064ac039d00214cc7f0
         try {
             await member.timeout(convertedTime, reason);
 
@@ -57,7 +75,12 @@ module.exports = {
         } catch (err) {
             console.log(err);
         }
+<<<<<<< HEAD
 
     return interaction.reply({ embeds: [embed] });
   },
 };
+=======
+  },
+};
+>>>>>>> 681dba4d3042040a22577064ac039d00214cc7f0
