@@ -29,9 +29,9 @@ module.exports = (existing, local) => {
             }
         };
 
-        const normaliseObject = (input) => {
+        const normalizeObject = (input) => {
             if (Array.isArray(input)) {
-                return input.map((item) => normaliseObject(item));
+                return input.map((item) => normalizeObject(item));
             }
 
             const normalizedItem = {
@@ -48,13 +48,8 @@ module.exports = (existing, local) => {
         return (cmd.options || []).map((option) => {
             let cleanedOption = JSON.parse(JSON.stringify(option));
             cleanedOption.options
-<<<<<<< HEAD
-            ? (cleanedOption.options = normaliseObject(cleanedOption.options))
-            : (cleanedOption = normaliseObject(cleanedOption));
-=======
             ? (cleanedOption.options = normalizeObject(cleanedOption.options))
-            : (cleanOptions = normalizeObject(cleanedOption));
->>>>>>> 681dba4d3042040a22577064ac039d00214cc7f0
+            : (cleanedOption = normalizeObject(cleanedOption));
             cleanObject(cleanedOption);
             return {
                 ...cleanedOption,
