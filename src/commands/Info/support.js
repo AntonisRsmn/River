@@ -3,11 +3,11 @@ const { SlashCommandBuilder, EmbedBuilder, Client } = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder()
   .setName("support")
-  .setDescription("River™ Support Server."),
+  .setDescription("Ryvex™ Support Server."),
 
   run: (client, interaction) => {
     const embed = new EmbedBuilder()
-        .setTitle(`***River™ Support***`)
+        .setTitle(`***Ryvex™ Support***`)
         .setColor("#fffffe")
         .setTimestamp()
         .setDescription("Need some help join [Here](https://discord.gg/qYA3gMrQ45)")
