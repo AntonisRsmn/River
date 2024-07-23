@@ -1,0 +1,75 @@
+const { SlashCommandBuilder, EmbedBuilder, ComponentType, ActionRowBuilder, StringSelectMenuBuilder, Client, Discord, } = require("discord.js");
+
+module.exports = {
+  data: new SlashCommandBuilder()
+    .setName("help")
+    .setDescription("Get a list of all the commands from Ryvex."),
+
+  run: (client, interaction) => {
+
+    const row = new Discord.ActionRowBuilder()
+    .addComponents(new Discord.SelectMenuBuilder()
+    .setCustomId('test')
+    .setPlaceholder('test 1')
+    .addOptions(
+        {
+            label: 'Fun Commands',
+            value: '1_option',
+        },
+        {
+            label: 'Moderation Commands',
+            value: '2_option'
+        },
+        {
+            label: 'Information Commands',
+            value: '3_option',
+        }
+    )
+);
+
+    const embed = new EmbedBuilder()
+    .setTitle("All Commands")
+    .setFields(
+        { name: "/8ball", value: "Answers a yes or no question.", inline: true },
+        { name: "/compliments", value: "Gives you nice compliments.", inline: true },
+        { name: "/gaymeter", value: " Gay Meter.", inline: true },
+        { name: "/meme", value: "Sends some funny memes.", inline: true },
+        { name: "/ppmeter", value: "PP Meter.", inline: true },
+        { name: "/rps", value: "Play rock paper scissors against the bot.", inline: true },
+        { name: "/botinfo", value: "Get information about the bot.", inline: true },
+    )
+    .setFields(
+        { name: "/botinfo", value: "Get information about the bot.", inline: true },
+        { name: "/donate", value: "Support Ryvex by donating.", inline: true },
+        { name: "/help", value: "Get a list of all the commands from Ryvex.", inline: true },
+        { name: "/ping", value: "Latency of the bot.", inline: true },
+        { name: "/poll", value: "Create a poll and send it to a certai channel.", inline: true },
+        { name: "/support", value: "River™ Support Server.", inline: true },
+        { name: "/uptime", value: "Shows the uptime of the bot.", inline: true },
+        { name: "/user-info", value: "Get information about a member.", inline: true },
+        { name: "/website", value: "Ryvex Website.", inline: true },
+    )
+    .setFields(
+        { name: "/add-role", value: "Add a role to a member.", inline: true },
+        { name: "/ban", value: "Ban a member from the guild.", inline: true },
+        { name: "/clear", value: "clear up to 99 messages from a target or channel.", inline: true },
+        { name: "/kick", value: "Kick a member from the guild.", inline: true },
+        { name: "/lock", value: "Lock a given channel.", inline: true },
+        { name: "/mute", value: "Mute a member from the guild.", inline: true },
+        { name: "/remove-role", value: "Remove a role from a member.", inline: true },
+        { name: "/remove-timeout", value: "Remove timeout from a member of the guild.", inline: true },
+        { name: "/timeout", value: "Timeout a member from the guild.", inline: true },
+        { name: "/unban", value: "Unban a member from the guild.", inline: true },
+        { name: "/unlock", value: "Unlock a given channel.", inline: true },
+        { name: "/unmute", value: "Unmute a member from the guild.", inline: true },
+    )
+    .setColor(0xFFFFFE)
+    .setFooter({
+      text: `By ${interaction.user.username}`,
+      iconURL: interaction.user.displayAvatarURL(),
+    })
+    .setTimestamp();
+
+    return interaction.reply({ embeds: [embed] });
+  },
+};
